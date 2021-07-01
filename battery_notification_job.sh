@@ -11,7 +11,7 @@ bat_l='herbe "Charge me Please," " " "Gonna SHUTDOWN"'
 
 if [ 'charging' = '$bat_state' ]; then 
 	# if bat > 99% -> notify
-	if [[ "$percent" -gt 15 ]]; then
+	if [[ "$percent" -gt 99 ]]; then
 		eval $bat_h
 	fi
 

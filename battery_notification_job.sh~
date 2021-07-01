@@ -8,17 +8,16 @@ percent="$(upower -i `upower -e | grep 'BAT1'` | grep 'percentage' | awk '{print
 
 bat_h='herbe "Unplug me Please," " " "I am too FULL"'
 bat_l='herbe "Charge me Please," " " "Gonna SHUTDOWN"'
-l_limit='15'
-h_limit='99'
+
 if [ 'charging' = '$bat_state' ]; then 
 	# if bat > 99% -> notify
-	if [[ "$percent" -gt "$h_limit" ]]; then
+	if [[ "$percent" -gt 15 ]]; then
 		eval $bat_h
 	fi
 
 else
 	# if bat < 15% -> notify
-	if [[ "$percent" -le "$l_limit" ]]; then
+	if [[ "$percent" -le 15 ]]; then
 		eval $bat_l
 	fi
 
